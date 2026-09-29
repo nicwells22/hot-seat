@@ -1,1 +1,72 @@
-// to add
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c35">
+  <title>On the Hot Seat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="brand">
+      <p class="eyebrow">SEMINARY GET-TO-KNOW-YOU GAME</p>
+      <h1>On the <span>Hot Seat</span></h1>
+    </header>
+
+    <section id="setupScreen" class="card screen">
+      <div class="flame" aria-hidden="true">✦</div>
+      <h2>Who’s playing?</h2>
+      <p class="helper">Enter one student per line. Names stay on this device.</p>
+      <label for="namesInput">Student names</label>
+      <textarea id="namesInput" rows="9" placeholder="Abigail&#10;Ethan&#10;Maria&#10;Noah"></textarea>
+      <p id="nameCount" class="count">0 students</p>
+      <button id="chooseButton" class="button primary" type="button" disabled>Choose the Hot Seat</button>
+      <button id="clearNamesButton" class="button text-button" type="button">Clear saved names</button>
+    </section>
+
+    <section id="selectedScreen" class="card screen hidden" aria-live="polite">
+      <p class="eyebrow">THE HOT SEAT GOES TO…</p>
+      <div id="selectedName" class="selected-name"></div>
+      <p class="helper">Come to the front. Your two minutes begin when the teacher starts the round.</p>
+      <button id="startButton" class="button primary" type="button">Start 2-Minute Round</button>
+      <button id="pickAgainButton" class="button secondary" type="button">Pick Someone Else</button>
+    </section>
+
+    <section id="gameScreen" class="game screen hidden" aria-live="polite">
+      <div class="game-topbar">
+        <div>
+          <p class="eyebrow">IN THE HOT SEAT</p>
+          <p id="playerName" class="player-name"></p>
+        </div>
+        <div id="timer" class="timer" role="timer" aria-label="Time remaining">2:00</div>
+      </div>
+
+      <div class="timer-track" aria-hidden="true"><div id="timerFill" class="timer-fill"></div></div>
+
+      <article class="question-card">
+        <div id="questionType" class="question-type"></div>
+        <h2 id="questionText" class="question-text"></h2>
+        <p id="questionHint" class="question-hint"></p>
+      </article>
+
+      <div class="game-actions">
+        <button id="endButton" class="button secondary" type="button">End Round</button>
+        <button id="nextButton" class="button primary next" type="button">Next Question <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="shortcut">Tip: press the space bar for the next question</p>
+    </section>
+
+    <section id="finishedScreen" class="card screen hidden" aria-live="polite">
+      <div class="finish-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow">TIME’S UP!</p>
+      <h2>Great job, <span id="finishedName"></span>!</h2>
+      <p id="questionsAnswered" class="score"></p>
+      <button id="newRoundButton" class="button primary" type="button">Choose the Next Student</button>
+      <button id="backToNamesButton" class="button secondary" type="button">Edit Student List</button>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

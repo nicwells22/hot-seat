@@ -73,7 +73,7 @@ function showNextQuestion() {
   questionsShown += 1;
   questionType.textContent = question.type === "choice" ? "This or That" : "One-Word Answer";
   questionText.textContent = question.text;
-  questionHint.textContent = question.type === "choice" ? "Choose oneâno explanation needed." : "Answer with one word or a very short phrase.";
+  questionHint.textContent = question.type === "choice" ? "Choose one—no explanation needed." : "Answer with one word or a very short phrase.";
 }
 
 function startRound() {
@@ -109,7 +109,7 @@ async function loadQuestions() {
     updateNameCount();
   } catch (error) {
     document.querySelector("#setupScreen").innerHTML = `
-      <h2>Questions couldnât load</h2>
+      <h2>Questions couldn’t load</h2>
       <p class="helper">Run this folder from a small local web server or upload all four files together. Browsers block JSON loading when index.html is opened directly.</p>`;
   }
 }
