@@ -1,4 +1,4 @@
-const ROUND_SECONDS = 120;
+const ROUND_SECONDS = 75;
 
 const screens = [...document.querySelectorAll(".screen")];
 const namesInput = document.querySelector("#namesInput");
